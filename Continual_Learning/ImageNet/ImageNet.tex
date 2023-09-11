@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage{natbib}
+\usepackage{currfile}
+
+% Custom command to set the title to the current folder name
+\makeatletter
+\newcommand{\setfoldernameastitle}{%
+  \begingroup
+  \edef\x{\endgroup\noexpand\title{\currfilebase}}\x
+}
+\makeatother
+
+\author{by Henry Bourne}
+\date{\today}
+
+\begin{document}
+
+\setfoldernameastitle % Set the title to the current folder name
+
+\maketitle
+
+\section{What are the references about?}
+The references in this document are all papers that introduce methods for continual learning that perform well on ImageNet. 
+
+\begin{enumerate}
+  \item Test
+\end{enumerate}
+
+\section{References}
+\bibliographystyle{plainnat} % Use a bibliography style of your choice
+\bibliography{your_references} % Replace 'your_references' with the name of your .bib file
+
+\end{document}
+
