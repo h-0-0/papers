@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{natbib}
+\usepackage{currfile}
+
+% Custom command to set the title to the current folder name
+\makeatletter
+\newcommand{\setfoldernameastitle}{%
+  \begingroup
+  \edef\x{\endgroup\noexpand\title{\currfilebase}}\x
+}
+\makeatother
+
+\author{by Henry Bourne}
+\date{\today}
+
+\begin{document}
+
+\setfoldernameastitle % Set the title to the current folder name
+
+\maketitle
+
+\section{What are the references about?}
+These references are all about papers on meta learning. First we will list some papers that look at meta learning and contrastive learning:
+
+\begin{itemize}
+  \item \cite{ni2021close}: Show that meta-learning and contrastive learning can be set up in ways where tehy are equivelant or very similar to each other.
+  \item \cite{li2022metaug}: Uses meta-learning to learn augmentation generator for contrastive learning.
+\end{itemize}
+
+Now we will look at some papers that look at meta learning and continual learning:
+\begin{itemize}
+  \item \cite{vuorio2018meta}: Uses meta-learning to control update step to prevent CF.
+  \item \cite{gupta2020look}: Uses meta-learning to learn per-parameter learning rates to prevent CF.
+  \item \cite{von2021learning}: Similarly to \cite{gupta2020look} uses meta-learning to learn per-parameter learning rates to prevent CF, put promotes sparse gradients while doing so. 
+\end{itemize}
+
+
+\section{References}
+\bibliographystyle{plain} % Use a bibliography style of your choice
+\bibliography{refs} % Replace 'your_references' with the name of your .bib file
+
+\end{document}
+

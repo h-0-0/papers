@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{natbib}
+\usepackage{currfile}
+
+% Custom command to set the title to the current folder name
+\makeatletter
+\newcommand{\setfoldernameastitle}{%
+  \begingroup
+  \edef\x{\endgroup\noexpand\title{\currfilebase}}\x
+}
+\makeatother
+
+\author{by Henry Bourne}
+\date{\today}
+
+\begin{document}
+
+\setfoldernameastitle % Set the title to the current folder name
+
+\maketitle
+
+\section{What are the references about?}
+The references in this document are all papers that introduce methods for self supervised continual learning methods. 
+
+\begin{itemize}
+  \item \cite{zhang2020self}: Focuses on class incremental learning. Talk about Prior Information Loss (PIL) which is the information the network has lost by not learning features from previous data that may later be useful. Propose to minimize PIL and CF by using SSL backbone with two heads: projection head (trained with SSL loss) and Classifier head (trained with Orthogonal Weights Modification (OWM) \cite{shen2021generative})
+  \item \cite{fini2022self}: Introduces CaSSLe a ``simple and effective framework for continual self supervised learning''. Uses knowledge distillation.
+  \item \cite{gallardo2021self}: Uses SSL for pretraining and the uses existing supervised CL methods for continual learning.
+  \item \cite{purushwalkam2022challenges}: Implement a buffer technique that tries to overcome three challenges (data efficient training, correlated data sources, non-stationary data streams).
+  \item \cite{pham2021dualnet}: Has one network trained with SSL loss and one in supervised manner with cross entropy loss. The SSL network is the ``slow learner'' and the supervised net the ``fast learner''. Feature information from the SSL network is shared with the supervised network.
+  \item \cite{cha2021co2l}: Uses a buffer and a distillation loss. 
+  \item \cite{yang2023efficient}: Use correlation between tasks to inform the freezing of layers in the network. Also uses a buffer and LUMP \cite{madaan2021representational}.
+  \item \cite{gomez2022continually}: Uses knowledge distillation with temporal projection network.
+  \item \cite{yu2023scale}: Uses a buffer, distillation loss and a pseudo-supervised contrastive loss.
+  \item \cite{cha2023sy}: Modifies SSL loss to include knowledge distillation and makes losses symmetric.
+  \item \cite{madaan2021representational}: Uses mix-up and a buffer. 
+\end{itemize}
+
+\section{References}
+\bibliographystyle{plain} % Use a bibliography style of your choice
+\bibliography{refs} % Replace 'your_references' with the name of your .bib file
+
+\end{document}
+

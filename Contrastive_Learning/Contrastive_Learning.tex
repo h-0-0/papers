@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{natbib}
+\usepackage{currfile}
+
+% Custom command to set the title to the current folder name
+\makeatletter
+\newcommand{\setfoldernameastitle}{%
+  \begingroup
+  \edef\x{\endgroup\noexpand\title{\currfilebase}}\x
+}
+\makeatother
+
+\author{by Henry Bourne}
+\date{\today}
+
+\begin{document}
+
+\setfoldernameastitle % Set the title to the current folder name
+
+\maketitle
+
+\section{What are the references about?}
+These references are all to do with contrastive learning, except for contrastive learning in SSL you can find papers on that in the ContinualLearning directory. 
+
+\begin{itemize}
+  \item \cite{oord2018representation}: Introduces the InfoNCE loss.
+  \item \cite{chen2020simple}: SimCLR paper.
+  \item \cite{xu2022negative}: Talks about role of negative sampling in contrastive learning and how to find good negatives.
+  \item \cite{wang2021understanding}: Talks about the role of temperature in contrastive learning and introduces the Uniformity-Tolerance tradeoff.
+  \item \cite{chen2021intriguing}: States generalized form of InfoNCE loss, talks about learning from images with multiple objects and about competing features.
+\end{itemize}
+
+\section{References}
+\bibliographystyle{plain} % Use a bibliography style of your choice
+\bibliography{refs} % Replace 'your_references' with the name of your .bib file
+
+\end{document}
+

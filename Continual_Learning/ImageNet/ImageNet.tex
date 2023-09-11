@@ -20,15 +20,20 @@
 \maketitle
 
 \section{What are the references about?}
-The references in this document are all papers that introduce methods for continual learning that perform well on ImageNet. 
+The references in this document are all papers that introduce methods for supervised continual learning methods that perform well on ImageNet. 
 
-\begin{enumerate}
-  \item Test
-\end{enumerate}
+\begin{itemize}
+  \item \cite{hayes2020remind}: Inspired by hippocampus replays hidden activations to the network to prevent catastrophic forgetting.
+  \item \cite{hou2019learning}: Builds on iCaRL \cite{rebuffi2017icarl} but improves on regularization using: cosine normalization, a ``less-forget'' constraint and by encouraging inter-class separation.
+  \item \cite{castro2018end}: Uses a buffer and distillation loss to gradually learn new classes.
+  \item \cite{zhang2020class}: Uses distillation loss that makes use of unlabeled auxillary data.
+  \item \cite{hayes2020lifelong}: Combines streaming linear discriminant analysis (SLDA) with deep learning to tackle catastrophic forgetting.
+  \item \cite{wu2019large}: Propose that the last fully connected layer of the network has strong bias towards new classes and that bias can be corrected by a linear model. Use this in conjunction with a distillation loss and a replay buffer.
+\end{itemize}
 
 \section{References}
-\bibliographystyle{plainnat} % Use a bibliography style of your choice
-\bibliography{your_references} % Replace 'your_references' with the name of your .bib file
+\bibliographystyle{plain} % Use a bibliography style of your choice
+\bibliography{refs} % Replace 'your_references' with the name of your .bib file
 
 \end{document}
 
