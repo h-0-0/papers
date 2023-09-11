@@ -2,7 +2,7 @@
 
 #File: tree-md
 
-tree=$(tree -tf --noreport -I '*~|.aux|.fdb_latexmk|.fls|.log|.gz' --charset ascii $1 |
+tree=$(tree -tf --noreport -I '*~|*.aux|*.fdb_latexmk|*.fls|*.log|*.gz' --charset ascii $1 |
        sed -e 's/| \+/  /g' -e 's/[|`]-\+/ */g' -e 's:\(* \)\(\(.*/\)\([^/]\+\)\):\1[\4](\2):g')
 
 printf "# Project tree\n\n${tree}"
